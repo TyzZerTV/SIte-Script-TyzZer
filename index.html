@@ -1,298 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TyzZer Scripts</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Découvrez les scripts FiveM de TyzZer : ressources gratuites et payantes pour votre serveur ESX.">
+<meta name="theme-color" content="#101014"><title>TyzZer Scripts — Donnez vie à votre serveur</title>
 <style>
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
-body {
-  color: white;
-  overflow-x: hidden;
-  background: #020617;
-}
-
-/* ANIMATED BACKGROUND */
-body::before {
-  content: "";
-  position: fixed;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg,
-    #22d3ee,
-    #a855f7,
-    #ec4899,
-    #f59e0b,
-    #22d3ee
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
-  z-index: -2;
-  opacity: 0.15;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* HEADER */
-header {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-header h1 {
-  font-size: 3.5rem;
-  background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 15px #22d3ee; }
-  to { text-shadow: 0 0 40px #a855f7; }
-}
-
-header p {
-  margin-top: 15px;
-  opacity: 0.8;
-  font-size: 1.1rem;
-}
-
-/* NAV */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 20px;
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.4);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #22d3ee;
-}
-
-/* CONTAINER */
-.container {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
-/* SECTION TITLE */
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  text-align: center;
-  background: linear-gradient(90deg, #22d3ee, #f59e0b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-}
-
-/* CARD */
-.card {
-  position: relative;
-  background: rgba(15,23,42,0.9);
-  padding: 30px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: 0.4s;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  background: linear-gradient(135deg, #22d3ee, #a855f7);
-  top: -100%;
-  left: -100%;
-  transition: 0.6s;
-  opacity: 0.2;
-}
-
-.card:hover::before {
-  top: 0;
-  left: 0;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 0 40px rgba(34,211,238,0.5);
-}
-
-/* BADGES */
-.badge {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 6px 14px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  border-radius: 999px;
-  animation: float 3s infinite ease-in-out;
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.free {
-  background: #22c55e;
-  color: black;
-}
-
-.payant {
-  background: #ef4444;
-}
-
-/* CONTENT */
-.card h3 {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-  color: #22d3ee;
-}
-
-.tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  background: #1e293b;
-  padding: 6px 14px;
-  border-radius: 999px;
-  margin-bottom: 15px;
-}
-
-.card p {
-  opacity: 0.85;
-  margin-bottom: 20px;
-}
-
-/* BUTTON */
-.card a {
-  display: block;
-  text-align: center;
-  padding: 14px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
-
-.card.free-btn a {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: black;
-}
-
-.card.pay-btn a {
-  background: linear-gradient(135deg, #facc15, #f97316);
-  color: black;
-}
-
-.card a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(250,204,21,0.7);
-}
-
-/* FOOTER */
-footer {
-  margin-top: 100px;
-  text-align: center;
-  padding: 40px;
-  opacity: 0.6;
-}
+:root{--bg:#101014;--panel:#19191f;--line:#2b2b35;--text:#f4f3fa;--muted:#a6a4b4;--accent:#a78bfa;--green:#8fe3b1}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,input{font:inherit}button,a,input{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:5px}::selection{background:#7957b7;color:white}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}.nav{position:sticky;top:0;z-index:30;background:#101014ed;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}.nav-inner{min-height:82px;display:flex;align-items:center;gap:36px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.7px;font-size:20px}.logo{display:grid;place-items:center;width:35px;height:35px;background:var(--accent);color:#171023;border-radius:9px;font-size:16px;letter-spacing:-2px}.brand small{font-weight:400;color:var(--muted)}.nav-links{display:flex;gap:28px;margin-left:auto;font-size:14px;color:var(--muted)}.nav-links a:hover{color:white}.nav-github{font-size:13px;border:1px solid var(--line);padding:9px 16px;border-radius:8px}.hero{padding:100px 0 80px;display:grid;grid-template-columns:1.15fr 1fr;gap:70px;align-items:center}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:9px}.dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}h1{font-size:clamp(42px,5.2vw,66px);line-height:1.08;letter-spacing:-3px;margin:24px 0}h1 span{color:var(--accent)}.intro{color:var(--muted);font-size:16px;max-width:440px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:12px 20px;border-radius:8px;font-weight:650;font-size:13px;border:1px solid var(--line);background:transparent;color:var(--text);transition:background .2s,transform .2s}.btn:hover{background:#292832;transform:translateY(-2px)}.btn-primary{background:var(--accent);border-color:var(--accent);color:#171023}.btn-primary:hover{background:#bba5ff}.hero-note{font-size:11px;color:var(--muted);margin-top:24px}.code-window{position:relative;background:#17171e;border:1px solid #37333f;border-radius:14px;box-shadow:0 20px 100px #9372da12;transform:rotate(-2deg)}.window-top{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;gap:6px;align-items:center}.window-top i{width:8px;height:8px;border-radius:50%;background:#5e596c}.window-top i:first-child{background:#e0788b}.window-top i:nth-child(2){background:#d1af71}.window-top i:nth-child(3){background:#85b498}.filename{margin-left:auto;font:11px monospace;color:var(--muted)}pre{margin:0;padding:26px 22px 38px;overflow:auto;font-size:12px;line-height:2;color:#d2cddb}.purple{color:#b7a1ed}.lime{color:#a7c991}.comment{color:#777385}.code-foot{border-top:1px solid var(--line);padding:10px 18px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}.floating{position:absolute;right:-16px;bottom:-21px;background:#25232d;border:1px solid #474150;border-radius:10px;padding:12px 18px;font-size:12px;box-shadow:0 10px 30px #0005}.floating b{color:var(--green);margin-right:8px}.stack{border-block:1px solid var(--line);padding:22px 0}.stack-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.stack-label{color:var(--muted);font-size:11px}.stack-list{display:flex;gap:36px;flex-wrap:wrap;color:#c7c4d1;font-size:13px;font-weight:600}.stack-list span:before{content:'◇';color:var(--accent);margin-right:9px}.catalogue{padding:76px 0}.section-top{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}h2{font-size:32px;line-height:1.2;letter-spacing:-1px;margin:12px 0}.subtitle{font-size:14px;color:var(--muted);margin:0}.count{font-size:12px;color:var(--muted)}.toolbar{display:flex;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}.filters{display:flex;gap:6px;background:#18181e;border:1px solid var(--line);padding:5px;border-radius:9px}.filter{border:0;background:transparent;color:var(--muted);font-size:12px;padding:8px 17px;border-radius:5px}.filter[aria-pressed="true"]{background:#36303f;color:#e3d6ff}.search{width:260px;border:1px solid var(--line);background:#18181e;color:white;border-radius:9px;padding:12px 15px;font-size:12px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:23px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .25s,border-color .25s;display:flex;flex-direction:column}.card:hover{transform:translateY(-5px);border-color:#65557f}.card[hidden]{display:none}.art{height:190px;position:relative;display:grid;place-items:center;overflow:hidden;background-color:#262236;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:24px 24px}.art:before{content:'';position:absolute;width:180px;height:180px;border-radius:50%;background:#9975ea28;filter:blur(35px)}.radio-art{background-color:#172c29}.burger-art{background-color:#30251f}.badge{position:absolute;left:15px;top:15px;border:1px solid #ffffff18;background:#15151dc9;border-radius:5px;padding:3px 9px;font-size:9px;font-weight:700;letter-spacing:.7px}.badge.free{color:var(--green)}.symbol{position:relative;width:86px;height:86px;display:grid;place-items:center;border-radius:22px;background:#b69af01a;border:1px solid #b69af04d;color:#cbb4ff;transform:rotate(-8deg);box-shadow:10px 12px 0 #0002}.symbol svg{width:42px;height:42px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.radio-art .symbol{color:#9ae8c3;background:#9ae8c31a;border-color:#9ae8c34d;transform:rotate(8deg)}.burger-art .symbol{color:#f1bf8b;background:#f1bf8b1a;border-color:#f1bf8b4d;transform:rotate(-6deg)}.art-label{position:absolute;bottom:13px;right:15px;font:10px monospace;letter-spacing:2px;color:#ffffff40}.card-body{padding:23px;display:flex;flex-direction:column;flex:1}.category{font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}h3{font-size:21px;margin:7px 0}.description{color:var(--muted);font-size:13px;margin:0 0 18px;min-height:42px}.tags{display:flex;gap:6px;margin-bottom:24px}.tags span{border:1px solid #ffffff0d;border-radius:4px;padding:3px 7px;color:#bcb6c9;font-size:9px}.card-bottom{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;margin-top:auto;gap:12px}.price{font-size:13px;font-weight:650}.price small{display:block;font-size:9px;color:var(--muted);font-weight:400}.card-link{font-size:11px;padding:8px 12px;border-radius:6px;background:#302a3e;color:#cfbafa;border:1px solid #58466f}.card-link:hover{background:#443655}.empty{color:var(--muted);padding:40px 0;text-align:center}.contact{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:35px 40px;background:linear-gradient(110deg,#242031,#19191f);border:1px solid #3e354e;border-radius:12px;margin-bottom:70px}.contact h2{font-size:25px;margin-top:0}.contact p{color:var(--muted);font-size:13px;margin:8px 0}.contact .actions{margin:0}.contact-name{color:#d9c7ff!important;font-family:monospace}.status{font-size:11px;color:var(--green);margin-top:10px;min-height:18px}footer{border-top:1px solid var(--line);padding:28px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:11px}.footer-inner .brand{font-size:14px}.footer-inner .logo{width:26px;height:26px;font-size:12px}footer p{margin:4px 0}.footer-links{display:flex;gap:20px}.legal{text-align:center;color:#767180;font-size:10px;margin-top:22px}@media(max-width:900px){.hero{gap:35px}.grid{gap:14px}.card-body{padding:18px}.card-bottom{align-items:start;flex-direction:column}.stack-list{gap:20px}.contact{padding:28px}}@media(max-width:680px){.wrap{width:calc(100% - 32px)}.nav-inner{min-height:70px;gap:15px;flex-wrap:wrap;padding:14px 0}.brand{font-size:17px}.nav-links{gap:18px;font-size:12px}.nav-github{display:none}.hero{grid-template-columns:1fr;padding:55px 0 65px;gap:42px}h1{letter-spacing:-2px}.code-window{margin:0 12px}.grid{grid-template-columns:1fr}.art{height:205px}.card-bottom{flex-direction:row;align-items:center}.description{min-height:0}.section-top{align-items:start}.catalogue{padding:55px 0}.search{width:100%}.filters{width:100%}.filter{flex:1}.contact{grid-template-columns:1fr;margin-bottom:45px}.footer-inner{flex-wrap:wrap}.stack-list{gap:14px;font-size:11px}.floating{right:-8px}.footer-links{margin-left:auto}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 </style>
 </head>
-
 <body>
-<header>
-  <h1>TyzZer Scripts</h1>
-  <p>FiveM • ESX • ox_lib • ox_target</p>
-</header>
+<header class="nav"><div class="wrap nav-inner"><a class="brand" href="#accueil" aria-label="TyzZer Scripts, accueil"><span class="logo">T/</span>TyzZer <small>Scripts</small></a><nav class="nav-links" aria-label="Navigation principale"><a href="#scripts">Les scripts</a><a href="#contact">Contact</a></nav><a class="nav-github" href="https://github.com/TyzZerTV" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></header>
+<main id="accueil">
+<div class="wrap hero"><div><div class="eyebrow"><span class="dot"></span>Ressources FiveM</div><h1>Votre serveur.<br>Votre univers.<br><span>Mes scripts.</span></h1><p class="intro">Des ressources pour enrichir votre expérience RP. Découvrez mes créations pour donner une nouvelle dimension à votre serveur FiveM.</p><div class="actions"><a class="btn btn-primary" href="#scripts">Explorer les scripts <span aria-hidden="true">↗</span></a><a class="btn" href="#contact">Me contacter</a></div><p class="hero-note">Développé par TyzZer · Pour les passionnés de roleplay</p></div>
+<div class="code-window" aria-label="Exemple de configuration d’une ressource FiveM"><div class="window-top"><i></i><i></i><i></i><span class="filename">fxmanifest.lua</span></div><pre><span class="comment">-- Une nouvelle expérience commence ici.</span>
+<span class="purple">fx_version</span> <span class="lime">'cerulean'</span>
+<span class="purple">game</span> <span class="lime">'gta5'</span>
 
-<nav>
-  <a href="#free">Gratuit</a>
-  <a href="#payant">Payant</a>
-  <a href="#contact">Contact</a>
-</nav>
+<span class="purple">author</span> <span class="lime">'TyzZer'</span>
+<span class="purple">description</span> <span class="lime">'Made for your city.'</span>
 
-<div class="container">
-
-<section id="free">
-  <h2>Scripts Gratuits</h2>
-  <div class="grid">
-
-    <div class="card free-btn">
-      <span class="badge free">FREE</span>
-      <h3>Kick</h3>
-      <span class="tag">Administration</span>
-      <p>Système de kick RP avec animation immersive.</p>
-      <a href="https://github.com/TyzZerTV" target="_blank">Télécharger</a>
-    </div>
-
-  </div>
-</section>
-
-<section id="payant">
-  <h2>Scripts Payants</h2>
-  <div class="grid">
-
-    <div class="card pay-btn">
-      <span class="badge payant">PAYANT</span>
-      <h3>Radio</h3>
-      <span class="tag">ESX</span>
-      <p>Système radio complet avec item intégré.</p>
-      <a href="#">Acheter</a>
-    </div>
-
-    <div class="card pay-btn">
-      <span class="badge payant">PAYANT</span>
-      <h3>Space Burger</h3>
-      <span class="tag">ESX • ox_lib</span>
-      <p>Restaurant RP complet avec craft et gestion.</p>
-      <a href="#">Acheter</a>
-    </div>
-
-  </div>
-</section>
-
-</div>
-
-<footer id="contact">
-  Discord : TyzZer_TV • GitHub : TyzZerTV  
-  <br>© 2026 TyzZer Scripts
-</footer>
-</body>
-</html>
+<span class="purple">shared_scripts</span> {
+  <span class="lime">'@ox_lib/init.lua'</span>,
+  <span class="lime">'config.lua'</span>
+}</pre><div class="code-foot"><span>Lua</span><span>UTF-8 · FiveM</span></div><div class="floating"><b>✓</b> Votre prochaine ressource RP</div></div></div>
+<div class="stack"><div class="wrap stack-inner"><span class="stack-label">MON ENVIRONNEMENT DE DÉVELOPPEMENT</span><div class="stack-list"><span>FiveM</span><span>ESX</span><span>ox_lib</span><span>ox_target</span></div></div></div>
+<section class="wrap catalogue" id="scripts" aria-labelledby="catalogue-title"><div class="section-top"><div><div class="eyebrow">Le catalogue</div><h2 id="catalogue-title">Trouvez votre prochain script.</h2><p class="subtitle">Des créations pour les petits détails comme les grandes idées.</p></div><span class="count" id="count" aria-live="polite">3 scripts</span></div>
+<div class="toolbar"><div class="filters" role="group" aria-label="Filtrer les scripts"><button class="filter" data-filter="all" aria-pressed="true">Tous</button><button class="filter" data-filter="free" aria-pressed="false">Gratuits</button><button class="filter" data-filter="paid" aria-pressed="false">Payants</button></div><input class="search" id="search" type="search" placeholder="Rechercher un script…" aria-label="Rechercher un script"></div>
+<div class="grid" id="catalogue">
+<article class="card" data-type="free" data-search="kick administration gratuit"><div class="art"><span class="badge free">GRATUIT</span><div class="symbol"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 39 11v12c0 10-15 19-15 19S9 33 9 23V11Z"/><path d="m18 24 4 4 9-10"/></svg></div><span class="art-label">TY / KICK</span></div><div class="card-body"><span class="category">Administration</span><h3>Kick</h3><p class="description">Un système de kick RP avec une animation immersive pour vos interventions.</p><div class="tags"><span>FiveM</span><span>Administration</span></div><div class="card-bottom"><span class="price">Gratuit<small>À retrouver sur GitHub</small></span><a class="card-link" href="https://github.com/TyzZerTV" target="_blank" rel="noopener noreferrer" aria-label="Découvrir Kick sur GitHub">Voir sur GitHub ↗</a></div></div></article>
+<article class="card" data-type="paid" data-search="radio esx communication payant"><div class="art radio-art"><span class="badge">PAYANT</span><div class="symbol"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="14" width="22" height="28" rx="5"/><path d="M18 14V4m10 10V9M20 23h10M20 29h10M22 35h6"/><path d="M7 17c-3 5-3 10 0 15m34-15c3 5 3 10 0 15"/></svg></div><span class="art-label">TY / RADIO</span></div><div class="card-body"><span class="category">Communication</span><h3>Radio</h3><p class="description">Gardez le contact en ville avec un système radio complet et son item intégré.</p><div class="tags"><span>ESX</span><span>Item intégré</span></div><div class="card-bottom"><span class="price">Sur demande<small>Contactez-moi sur Discord</small></span><a class="card-link" href="#contact" data-interest="Radio">Se renseigner ↗</a></div></div></article>
+<article class="card" data-type="paid" data-search="space burger restaurant craft gestion esx ox_lib payant"><div class="art burger-art"><span class="badge">PAYANT</span><div class="symbol"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 21c0-18 32-18 32 0ZM7 27h34M9 33h30v4a5 5 0 0 1-5 5H14a5 5 0 0 1-5-5ZM18 14h1m9-1h1M8 27l7 5 8-5 8 5 9-5"/></svg></div><span class="art-label">TY / SPACE BURGER</span></div><div class="card-body"><span class="category">Métier & restauration</span><h3>Space Burger</h3><p class="description">Faites vivre votre restaurant RP avec un système de craft et de gestion.</p><div class="tags"><span>ESX</span><span>ox_lib</span></div><div class="card-bottom"><span class="price">Sur demande<small>Contactez-moi sur Discord</small></span><a class="card-link" href="#contact" data-interest="Space Burger">Se renseigner ↗</a></div></div></article>
+</div><p class="empty" id="empty" hidden>Aucun script ne correspond à votre recherche.</p></section>
+<section class="wrap contact" id="contact" aria-labelledby="contact-title"><div><div class="eyebrow" style="margin-bottom:12px">On en parle ?</div><h2 id="contact-title">Un script vous intéresse ?</h2><p id="contact-text">Une question sur une ressource ? Retrouvez-moi sur Discord.</p><p class="contact-name">Discord : TyzZer_TV</p><div class="status" role="status" id="copy-status"></div></div><div class="actions"><button class="btn btn-primary" id="copy">Copier le pseudo <span aria-hidden="true">↗</span></button><a class="btn" href="https://github.com/TyzZerTV" target="_blank" rel="noopener noreferrer">Mon GitHub ↗</a></div></section>
+</main>
+<footer><div class="wrap"><div class="footer-inner"><a href="#accueil" class="brand"><span class="logo">T/</span>TyzZer <small>Scripts</small></a><p>© <span id="year">2026</span> TyzZer Scripts. Tous droits réservés.</p><div class="footer-links"><a href="#scripts">Catalogue</a><a href="#contact">Contact</a><a href="#accueil" aria-label="Retour en haut">↑</a></div></div><p class="legal">Projet indépendant, non affilié à Rockstar Games ou à Cfx.re.</p></div></footer>
+<script>
+'use strict';
+const filters=[...document.querySelectorAll('.filter')],cards=[...document.querySelectorAll('.card')],search=document.getElementById('search');let active='all';
+const normalize=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function update(){const query=normalize(search.value.trim());let count=0;cards.forEach(card=>{const visible=(active==='all'||card.dataset.type===active)&&normalize(card.dataset.search).includes(query);card.hidden=!visible;if(visible)count++;});document.getElementById('count').textContent=count+' script'+(count>1?'s':'');document.getElementById('empty').hidden=count!==0;}
+filters.forEach(button=>button.addEventListener('click',()=>{active=button.dataset.filter;filters.forEach(other=>other.setAttribute('aria-pressed',String(other===button)));update();}));search.addEventListener('input',update);
+document.querySelectorAll('[data-interest]').forEach(link=>link.addEventListener('click',()=>{document.getElementById('contact-text').textContent='Intéressé par '+link.dataset.interest+' ? Contactez-moi sur Discord pour en discuter.';}));
+document.getElementById('copy').addEventListener('click',async()=>{const status=document.getElementById('copy-status');try{await navigator.clipboard.writeText('TyzZer_TV');status.textContent='Pseudo copié ! Retrouvez-moi sur Discord.';}catch{status.textContent='Sélectionnez et copiez le pseudo : TyzZer_TV';}});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body></html>
